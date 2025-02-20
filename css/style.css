@@ -80,3 +80,15 @@ button:last-of-type{
 button:last-of-type:hover{
     background-color: #0056b3;
 }
+
+
+/*Resultado*/ 
+.resultado {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: #333;
+    text-align: left;
+}
