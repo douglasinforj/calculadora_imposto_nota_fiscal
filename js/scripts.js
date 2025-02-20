@@ -54,30 +54,7 @@ function calcularImposto() {
 
 
 //------------------------Gerar PDF----------------------------------
-/*
-function gerarPDF() {
-    let dados = calcularImposto();
-    if (!dados) return;
 
-    const { jsPDF } = window.jspdf;
-    let doc = new jsPDF();
-
-    doc.setFontSize(16);
-    doc.text("Nota Fiscal de Serviço - RJ", 20, 20);
-    doc.setFontSize(12);
-    doc.text(`Valor do Serviço: R$ ${dados.valor.toFixed(2)}`, 20, 40);
-    doc.text(`ISS: R$ ${dados.iss.toFixed(2)}`, 20, 50);
-    doc.text(`INSS: R$ ${dados.inss.toFixed(2)}`, 20, 60);
-    doc.text(`IRRF: R$ ${dados.irrf.toFixed(2)}`, 20, 70);
-    doc.text(`PIS: R$ ${dados.pis.toFixed(2)}`, 20, 80);
-    doc.text(`COFINS: R$ ${dados.cofins.toFixed(2)}`, 20, 90);
-    doc.text(`CSLL: R$ ${dados.csll.toFixed(2)}`, 20, 100);
-    doc.text(`Total de Impostos: R$ ${dados.totalImpostos.toFixed(2)}`, 20, 110);
-    doc.text(`Valor Líquido: R$ ${dados.totalLiquido.toFixed(2)}`, 20, 120);
-
-    doc.save("Nota_Fiscal_Servico.pdf");
-}
-    */
 
 function gerarPDF() {
     let dados = calcularImposto();
