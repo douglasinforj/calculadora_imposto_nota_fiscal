@@ -30,7 +30,7 @@ Além disso, permite gerar um PDF com os dados formatados no estilo de uma Nota 
 ## Como usar?
 
 - 1 Clone o repositório
-  git clone https://github.com/seu-usuario/nfse-rj-calculadora.git
+  git clone https://github.com/douglasinforj/calculadora_imposto_nota_fiscal.git
 - 2 Abra o arquivo index.html no navegador
 - 3 Digite o valor do serviço e escolha o regime tributário
 - 4 Clique em "Calcular" para visualizar os impostos
