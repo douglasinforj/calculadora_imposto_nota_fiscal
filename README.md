@@ -21,10 +21,10 @@ Além disso, permite gerar um PDF com os dados formatados no estilo de uma Nota 
  - jsPDF (para criar o documento PDF estruturado)
 
 ## Demonstração
-🔹 Interface do Formulário
+ - Interface do Formulário
 ![Formulário](assets/formulario.png)
 
-🔹 Exemplo de Nota Fiscal em PDF
+- Exemplo de Nota Fiscal em PDF
 ![pdf_gerado](assets/pdf_gerado.png)
 
 ## Como usar?
