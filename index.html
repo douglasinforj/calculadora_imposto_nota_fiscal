@@ -9,6 +9,7 @@
 <body>
     
     <div class="container">
+        <main>
         <h2>Calculadora de Imposto - NFS-e RJ</h2>
 
         <label for="valor">Valor do Serviço:</label>
@@ -27,12 +28,12 @@
             <option value="autonomo">Autônomo</option>
         </select>
 
-        <button onclick="">Calcular</button>
+        <button onclick="calcularImposto()">Calcular</button>
         <button onclick="">Gerar PDF</button>
 
         <div class="resultado" id="resultado"></div>
 
-    
+    </main>
     </div>
     
     <script src="js/scripts.js" ></script>
