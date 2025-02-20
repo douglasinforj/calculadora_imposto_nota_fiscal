@@ -20,7 +20,7 @@ Além disso, permite gerar um PDF com os dados formatados no estilo de uma Nota 
  - JavaScript (para cálculo dos impostos e geração do PDF)
  - jsPDF (para criar o documento PDF estruturado)
 
-## 📸 Demonstração
+## Demonstração
 🔹 Interface do Formulário
 ![Formulário](assets/formulario.png)
 
