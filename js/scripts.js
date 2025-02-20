@@ -54,7 +54,7 @@ function calcularImposto() {
 
 
 //------------------------Gerar PDF----------------------------------
-
+/*
 function gerarPDF() {
     let dados = calcularImposto();
     if (!dados) return;
@@ -75,5 +75,67 @@ function gerarPDF() {
     doc.text(`Total de Impostos: R$ ${dados.totalImpostos.toFixed(2)}`, 20, 110);
     doc.text(`Valor Líquido: R$ ${dados.totalLiquido.toFixed(2)}`, 20, 120);
 
+    doc.save("Nota_Fiscal_Servico.pdf");
+}
+    */
+
+function gerarPDF() {
+    let dados = calcularImposto();
+    if (!dados) return;
+
+    const { jsPDF } = window.jspdf;
+    let doc = new jsPDF();
+
+    // Cabeçalho do Documento
+    doc.setFontSize(16);
+    doc.text("Nota Fiscal de Serviço - RJ", 70, 20);
+    
+    doc.setFontSize(12);
+    doc.text("Prestador de Serviço: ______________________", 20, 35);
+    doc.text("CPF/CNPJ: ______________________________", 20, 45);
+    doc.text("Data de Emissão: ____/____/______", 20, 55);
+
+    // Criar tabela de impostos
+    let startY = 70;
+    doc.setFontSize(10);
+    doc.text("Descrição dos Tributos", 20, startY - 5);
+
+    const tabela = [
+        ["Imposto", "Valor (R$)"],
+        ["ISS", dados.iss.toFixed(2)],
+        ["INSS", dados.inss.toFixed(2)],
+        ["IRRF", dados.irrf.toFixed(2)],
+        ["PIS", dados.pis.toFixed(2)],
+        ["COFINS", dados.cofins.toFixed(2)],
+        ["CSLL", dados.csll.toFixed(2)],
+        ["Total de Impostos", dados.totalImpostos.toFixed(2)],
+        ["Valor Líquido", dados.totalLiquido.toFixed(2)],
+    ];
+
+    // Definir coordenadas da tabela
+    let posY = startY;
+    doc.setFont("helvetica", "bold");
+    doc.setFillColor(200, 200, 200);
+    doc.rect(20, posY, 80, 8, "F");
+    doc.rect(100, posY, 40, 8, "F");
+    doc.text("Imposto", 25, posY + 5);
+    doc.text("Valor (R$)", 105, posY + 5);
+    doc.setFont("helvetica", "normal");
+
+    // Preencher a tabela com valores
+    posY += 10;
+    tabela.slice(1).forEach(([imposto, valor]) => {
+        doc.rect(20, posY, 80, 8);
+        doc.rect(100, posY, 40, 8);
+        doc.text(imposto, 25, posY + 5);
+        doc.text(valor, 105, posY + 5);
+        posY += 8;
+    });
+
+    // Rodapé
+    doc.text("Declaro que os serviços foram prestados conforme descrito acima.", 20, posY + 15);
+    doc.text("Assinatura: ___________________________", 20, posY + 30);
+
+    // Salvar PDF
     doc.save("Nota_Fiscal_Servico.pdf");
 }
