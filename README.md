@@ -25,7 +25,7 @@ Além disso, permite gerar um PDF com os dados formatados no estilo de uma Nota 
 ![Formulário](assets/formulario.png)
 
 🔹 Exemplo de Nota Fiscal em PDF
-![pef_gerado](assets/pdf_gerado.png)
+![pdf_gerado](assets/pdf_gerado.png)
 
 ## Como usar?
 
